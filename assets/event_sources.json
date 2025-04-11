@@ -22,7 +22,7 @@
             "googleCalendarId": "triangleradicalevents@gmail.com",
             "city": "Triangle, NC",
             "filters": [
-                { "tags": ["raleigh", "durham", "hillsborough", "chapel_hill", "carrboro"] }
+                { "tags": ["raleigh", "hillsborough", "chapel_hill", "carrboro"] }
             ]
         },
         {
@@ -84,6 +84,14 @@
         {
             "name" : "Possibilities: A Durham Radical Autonomous Bulletin",
             "googleCalendarId" : "drabpossibilities@gmail.com",
+            "city" : "Durham, NC",
+            "filters": [
+                { "tags": ["durham"] }
+            ]
+        },
+        {
+            "name" : "Mothers for Ceasefire",
+            "googleCalendarId" : "c_578a4fee473673359f6a286a8cb87520a58e8237921b77a42197147b0bdf57da@group.calendar.google.com",
             "city" : "Durham, NC",
             "filters": [
                 { "tags": ["durham"] }
