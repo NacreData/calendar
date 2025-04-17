@@ -30,14 +30,15 @@ import { replaceBadgePlaceholders } from '~~/utils/util';
             see your email and get it posted. </p>
             
             <p>If your event is in Durham, the easiest way for your event to be added to
-            the nctree calendar is through the Durham Radical Autonomous Bulletin,
-            Possibilities. It's run by a collective that we work with to publicize our
-            calendars together, and we mark events from their calendar as "Durham events"
-            for our display to help people find them. If you're open to connecting with
-            them for your event, please email <a href="mailto:drabevents@proton.me"
+            the nctree calendar is through the Durham Radical Autonomous Bulletin, <a
+            href="https://durhampossibilities.org/" target="_blank">Possibilities</a>.
+            It's run by a collective that we work with to publicize our calendars
+            together, and we mark events from their calendar as "Durham events" for our
+            display to help people find them. If you're open to connecting with them for
+            your event, please email <a href="mailto:drabevents@proton.me"
             target="_blank">drabevents@proton.me</a> with the title, location, and
-            description of the event, and any other info, such as url, so they can add it to
-            their calendar. It will then automatically appear on nctree.</p>
+            description of the event, and any other info, such as url, so they can add it
+            to their calendar. It will then automatically appear on nctree.</p>
 
         <h2>Publishing Google Calendar events</h2>
             <ul>
