@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Triangle Radical Calendar',
+  title: 'Knox Info & Calendar Community',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       hid: 'description',
-      name: 'Triangle Radical Calendar',
+      name: 'Knox Info & Calendar Community',
       content: '',
     },
   ],

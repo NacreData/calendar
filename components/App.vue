@@ -420,10 +420,10 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
           <td class="blurb-image"> <div v-html="svgGrave"></div> </td>
           <td>
             <div class="blurb-text">
-              A communal board for DIY events around the Triangle area of NC
+              A communal calendar of events in Knox
             </div>
             <div class="blurb-sub">
-              North Carolina Triangle Radical Event Ecosystem - NCTree.xyz
+              Knox Info & Calendar Community - KICC.info
             </div>
           </td>
         </tr>
