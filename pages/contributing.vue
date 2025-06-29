@@ -9,13 +9,17 @@ import { replaceBadgePlaceholders } from '~~/utils/util';
             <p>Hello and welcome, comrades!  </p>
 
             <p>There are a couple different ways to contribute events to the calendar, but
-            we encourage using this form (https://cryptpad.fr/form/#/2/form/edit/jTrXE53VJvraUFCkMr0A3kyD/) for the quickest turnaround. If you have your events require specific accomodations or if you have any questions, please email this project's maintainers to discuss
+            we encourage using this form
+            (https://cryptpad.fr/form/#/2/form/edit/jTrXE53VJvraUFCkMr0A3kyD/) for the
+            quickest turnaround. If you have your events require specific accomodations or
+            if you have any questions, please email this project's maintainers to discuss
             integrating those.</p>
             
 
-                            </ul>
-                    </ul>
-                <li>Thank you for contributing to our collective efforts in Knoxville. With your help, we're keeping Knox scruffy and connected.
+                            
+              <ul>
+                <li>Thank you for contributing to our collective efforts in Knoxville. 
+                With your help, we're keeping Knox scruffy and connected.
                 </li>
             </ul>
     </div>
