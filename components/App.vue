@@ -163,10 +163,10 @@ calendarOptions.value = {
         };
       }
     },
-    filter: {
-      text: 'filter',
-      click: openFilterModal,
-    },
+//     filter: {
+//       text: 'filter',
+//       click: openFilterModal,
+//     },
   },
   headerToolbar: {
     left: 'prev today filter',
@@ -420,7 +420,7 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
           <td class="blurb-image"> <div v-html="svgGrave"></div> </td>
           <td>
             <div class="blurb-text">
-              A communal calendar of events in Knox
+              A communal calendar of events in Knoxville
             </div>
             <div class="blurb-sub">
               Knox Info & Calendar Community - KICC.info

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'Knox Info & Calendar Community',
+  title: 'Knoxville Info & Calendar Community',
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {

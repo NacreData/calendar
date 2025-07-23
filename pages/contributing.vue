@@ -6,21 +6,27 @@ import { replaceBadgePlaceholders } from '~~/utils/util';
     <div class="desc">
         <h1 v-badge> :ripple: Contributing Events</h1>
 
-            <p>Hello and welcome, comrades!  </p>
+            <p>Hello and welcome, comrades!</p>
 
-            <p>There are a couple different ways to contribute events to the calendar, but
-            we encourage using this form
-            (https://cryptpad.fr/form/#/2/form/edit/jTrXE53VJvraUFCkMr0A3kyD/) for the
-            quickest turnaround. If you have your events require specific accomodations or
-            if you have any questions, please email this project's maintainers to discuss
-            integrating those.</p>
+            <p>
+            To get your event on the KICC page, please fill out this short form: <a
+            href="https://bit.ly/myKICCevent"
+            target="_blank">https://bit.ly/mykiccevent</a>. Once your event is live, we'll
+            reach out to let you know.
+            </p>
+            
+            <p>
+            If you need any specific accommodations or if you have questions, please email
+            this organizers to discuss integrating those at <a
+            href="mailto:mykiccevent@gmail.com" target="_blank">mykiccevent@gmail.com</a>.
+            </p>
             
 
                             
-              <ul>
-                <li>Thank you for contributing to our collective efforts in Knoxville. 
-                With your help, we're keeping Knox scruffy and connected.
-                </li>
+              <p>
+              Thank you for contributing to our collective efforts in Knoxville. <br>
+              With your help, we're keeping Knoxville scruffy and connected.
+              </p>
             </ul>
     </div>
     <Footer />

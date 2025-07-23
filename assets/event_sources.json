@@ -2,17 +2,7 @@
     "appConfig": {
         "tagsHeader": [],
         "tagsHidden": ["hidden", "invisible", "internal"],
-        "tagsToShow": [
-            [
-                { "name": "location", "fullName": "📍 Location", "defaultValue": "true" },
-                { "name": "raleigh", "fullName": "Raleigh", "defaultValue": "true" },
-                { "name": "durham", "fullName": "Durham", "defaultValue": "true" },
-                { "name": "hillsborough", "fullName": "Hillsborough", "defaultValue": "true" },
-                { "name": "chapel_hill", "fullName": "Chapel Hill", "defaultValue": "true"},
-                { "name": "carrboro", "fullName": "Carrboro", "defaultValue": "true"},
-                { "name": "cary", "fullName": "Cary", "defaultValue": "true"}
-            ]
-        ],
+        "tagsToShow": [],
         "eventApiToGrab": [
             "/api/events/googleCalendar"
         ]
