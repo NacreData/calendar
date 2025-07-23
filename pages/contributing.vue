@@ -24,7 +24,7 @@ import { replaceBadgePlaceholders } from '~~/utils/util';
 
                             
               <p>
-              Thank you for contributing to our collective efforts in Knoxville. <br />
+              Thank you for contributing to our collective efforts in Knoxville. 
               With your help, we're keeping Knoxville scruffy and connected.
               </p>
     </div>

@@ -9,91 +9,11 @@
     },
     "googleCalendar": [
         {
-            "name": "Triangle Public Events, See Event for Details",
-            "googleCalendarId": "triangleradicalevents@gmail.com",
-            "city": "Triangle, NC",
+            "name": "KICC Events",
+            "googleCalendarId": "mykiccevent@gmail.com",
+            "city": "Knoxville, TN",
             "filters": [
-                { "tags": ["raleigh", "hillsborough", "chapel_hill", "carrboro"] }
-            ]
-        },
-        {
-            "name" : "Raleigh United Mutual Aid Hub (RUMAH)", 
-            "googleCalendarId": "9e40ef8bf31101230505e352e34bd9078973320b4c00328e1dd6e1a9b65e6870@group.calendar.google.com",
-            "city": "Raleigh, NC",
-            "filters": [
-                { "tags": ["raleigh"] }
-            ]
-        },
-        {
-            "name" : "Rainbow Collective for Change", 
-            "googleCalendarId": "0820dd07ac269b6604c0deddeabea3568fcf6ebdc18996c9bdbb3e0aa3184cd5@group.calendar.google.com",
-            "city": "Durham, NC",
-            "filters": [
-                { "tags": ["durham"] }
-            ]
-        },
-        {
-            "name" : "Comrades in the Commons",
-            "googleCalendarId" : "comradesinthecommons@gmail.com",
-            "city" : "Durham, NC",
-            "filters": [
-                { "tags": ["durham"] }
-            ]
-        },
-        {
-            "name" : "Milkweed Mutual Aid",
-            "googleCalendarId" : "28970aa42f82774cab9dbf1dc4b1d1ee18ce9c9f22bbf8de1c0b747646b97f7d@group.calendar.google.com",
-            "city" : "Hillsborough, NC",
-            "filters": [
-                { "tags": ["hillsborough"] }
-            ]            
-        }, 
-        {
-            "name" : "Triangle Anarchist Reading Circle",
-            "googleCalendarId" : "trianglereadingcircle@gmail.com",
-            "city" : "Triangle, NC",
-            "filters": [
-                { "tags": ["durham"] }
-            ]
-        }, 
-        {
-            "name" : "Community Justice and Abolition Collective",
-            "googleCalendarId": "c4fba5532c4fbf1ba4bf76f0366031ac61aad6ec7b411a0747600431028bfb87@group.calendar.google.com",
-            "city": "Chapel Hill, NC",
-            "filters": [
-                { "tags": ["chapel_hill", "carrboro"] }
-            ]
-        },
-        {
-            "name" : "North Durham Tool Library",
-            "googleCalendarId" : "northdurhamtoollibrary@gmail.com",
-            "city" : "Durham, NC",
-            "filters": [
-                { "tags": ["durham"] }
-            ]
-        },
-        {
-            "name" : "Possibilities: A Durham Radical Autonomous Bulletin",
-            "googleCalendarId" : "drabpossibilities@gmail.com",
-            "city" : "Durham, NC",
-            "filters": [
-                { "tags": ["durham"] }
-            ]
-        },
-        {
-            "name" : "Mothers for Ceasefire",
-            "googleCalendarId" : "c_578a4fee473673359f6a286a8cb87520a58e8237921b77a42197147b0bdf57da@group.calendar.google.com",
-            "city" : "Durham, NC",
-            "filters": [
-                { "tags": ["durham"] }
-            ]
-        },
-        {
-            "name" : "Cary Really, Really Free Market",
-            "googleCalendarId" : "caryreallyreallyfreemarket@gmail.com",
-            "city" : "Cary, NC",
-            "filters": [
-              { "tags": ["cary"] }
+                { "tags": ["knoxville"] }
             ]
         }
     ],
