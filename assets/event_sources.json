@@ -9,8 +9,7 @@
                 { "name": "durham", "fullName": "Durham", "defaultValue": "true" },
                 { "name": "hillsborough", "fullName": "Hillsborough", "defaultValue": "true" },
                 { "name": "chapel_hill", "fullName": "Chapel Hill", "defaultValue": "true"},
-                { "name": "carrboro", "fullName": "Carrboro", "defaultValue": "true"},
-                { "name": "cary", "fullName": "Cary", "defaultValue": "true"}
+                { "name": "carrboro", "fullName": "Carrboro", "defaultValue": "true"}
             ]
         ],
         "eventApiToGrab": [
@@ -96,14 +95,6 @@
             "city" : "Durham, NC",
             "filters": [
                 { "tags": ["durham"] }
-            ]
-        },
-        {
-            "name" : "Cary Really Really Free Market",
-            "googleCalendarId" : "caryreallyreallyfreemarket@gmail.com",
-            "city" : "Cary, NC",
-            "filters": [
-              { "tags": ["cary"] }
             ]
         }
     ],
