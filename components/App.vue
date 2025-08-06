@@ -431,11 +431,7 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
     </table>
     <div style="text-align: center;" v-if="beforeMOTDDate">
       <div class="motd">
-<!-- 
-        🇵🇸 Want to get to DC on July 24th to protest Benjamin Netanyahu's visit to U.S. Congress?
-        PSL Virginia is hosting a bus to help get people there,
-        <a style="color: var(~~text-white);" href="https://www.instagram.com/pslvirginia/p/C9cnAaAuojQ/">More Info Here!</a> 🇵🇸
- -->
+      <!-- -->
       </div>
     </div>
     <FullCalendar ref="calendarRef" :options='calendarOptions' />
