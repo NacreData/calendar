@@ -417,7 +417,9 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
     <table style="width:100%;">
       <tbody>
         <tr>
-          <td class="blurb-image" style="width: 25%; max-width: 25%"> <img src="/logo.png" style="width: 300px; height: auto;"> </td>
+          <td class="blurb-image" style="width: 25%; max-width: 25%; align: center; text-align: center;"> 
+            <img src="/logo.png" style="width: 300px; height: auto; margin-left: auto; margin-right: auto;"> 
+          </td>
           <td>
             <div class="blurb-text">
               A communal calendar of events in Knoxville
