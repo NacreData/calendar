@@ -105,7 +105,15 @@
             "filters": [
               { "tags": ["cary"] }
             ]
-        }
+        },
+        {
+            "name" : "MATCH : Mutual Aid Triangle Community Hub",
+            "googleCalendarId" : "0b178d36a3185fcf9a00a5a5eb05fffb539b44b00f4d445f79ed5f4220f9816b@group.calendar.google.com",
+            "city" : "Carrboro, NC",
+            "filters": [
+              { "tags": ["carrboro", "chapel_hill"] }
+            ]
+        } 
     ],
     "squarespace": [
     ],
