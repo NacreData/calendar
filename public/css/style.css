@@ -318,6 +318,12 @@ div.fc-scrollgrid-sync-inner:not(.fc-daygrid-day-frame) {
   color: var(--text-normal);
 }
 
+.blurb-contribute {
+  font-size: min(1.2em);
+  text-align: center;
+  color: var(--text-normal);
+}
+
 .motd {
   font-size: min(1.2em);
   text-align: center;
