@@ -457,7 +457,7 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
           </ul></p>
         <p>Not in Knoxville? Check out our sibling sites <a href="https://nctree.xyz/">nctree.xyz</a>, <a href="https://rva.rip/">rva.rip</a>, <a href="https://anarchism.nyc/">anarchism.nyc</a>, 
         <a href="https://bay.lgbt/">bay.lgbt</a>, and <a href="https://anarchism.boston/">anarchism.boston</a>.
-        This site wouldn't exist withoutthem and their awesome maintainers.</p>
+        This site wouldn't exist without them and their awesome maintainers.</p>
       </div>
     </div>
     <Footer />
