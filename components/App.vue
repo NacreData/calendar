@@ -422,10 +422,14 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
           </td>
           <td>
             <div class="blurb-text">
-              A communal calendar of events in Knoxville
+              Knox Info & Calendar Community
             </div>
             <div class="blurb-sub">
-              Knox Info & Calendar Community - KICC.info
+              KICC supports liberation movements in the Knox County area with a <br>
+              unified activism event calendar, available here and in print.
+            </div>
+            <div class="blurb-contribute">
+              <a href="/contributing">Click here to get your event listed!</a>
             </div>
           </td>
         </tr>
