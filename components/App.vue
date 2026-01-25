@@ -425,7 +425,10 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
               A communal calendar of events in Knoxville
             </div>
             <div class="blurb-sub">
-              Knox Info & Calendar Community - KICC.info
+              Knox Info & Calendar Community
+            </div>
+            <div class="contribute-link">
+              <a href="/contributing">Click here to get your event listed!</a>
             </div>
           </td>
         </tr>
