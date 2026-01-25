@@ -447,14 +447,7 @@ const transformEventSourcesResponse = (eventSources: Ref<Record<string, any>>) =
           <a href="mailto:mykiccevent@gmail.com">email us here.</a></p>
         <p>Before making plans, consider checking with venue staff or event organizers directly. This site is not
           affiliated with any events listed.</p>
-        <!-- <p>Still can't figure out what to do? 
-          <ul style="line-height: 1.5em">
-            <li>Bored? Roll up to <a href="https://goo.gl/maps/7hE5ARFYcE7KTgun7">scuff</a> and say hi to the punks</li>
-            <li>Looking for music? Check out <a href="https://www.restlessrva.com/">restless</a> for local concerts happening. </li>
-            <li>Like sports? Sign up for <a href="https://stonewallrichmond.leagueapps.com/leagues/">stonewall sports</a>!!! Hot athletic gays!!!!!</li>
-            <li>Don't wanna go outside? Play <a href="https://play.half.earth//">half earth socialism</a>!!!</li> -->
-            <li>Wanna find more groups? Check out our <a href="/list">list of organizations and groups</a> in Knoxville</li>
-          </ul></p>
+        <p>Wanna find more groups? Check out our <a href="/list">list of organizations and groups</a> in Knoxville</p>
         <p>Not in Knoxville? Check out our sibling sites <a href="https://nctree.xyz/">nctree.xyz</a>, <a href="https://rva.rip/">rva.rip</a>, <a href="https://anarchism.nyc/">anarchism.nyc</a>, 
         <a href="https://bay.lgbt/">bay.lgbt</a>, and <a href="https://anarchism.boston/">anarchism.boston</a>.
         This site wouldn't exist without them and their awesome maintainers.</p>
