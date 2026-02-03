@@ -1,5 +1,5 @@
 import eventSourcesJSON from '@/assets/event_sources.json';
-import { logTimeElapsedSince, serverCacheMaxAgeSeconds, serverStaleWhileInvalidateSeconds, serverFetchHeaders } from '~~/utils/util';
+import { logTimeElapsedSince, serverCacheMaxAgeSeconds, serverStaleWhileInvalidateSeconds, serverFetchHeaders, applyEventTags } from '~~/utils/util';
 
 export default defineCachedEventHandler(async (event) => {
 	const startTime = new Date();
@@ -42,18 +42,23 @@ async function fetchWordPressTribeEvents() {
 };
 
 // The following conversion function is basically ripped from anarchism.nyc.
-function convertWordpressTribeEventToFullCalendarEvent(e) {
+// e is the event data
+// source is the event source configuration
+function convertWordpressTribeEventToFullCalendarEvent(e, source) {
 	var geoJSON = (e.venue.geo_lat && e.venue.geo_lng)
 		? {
 			type: "Point",
-			coordinates: [e.venue.geo_lng, e.venue.geo_lat]
+			coordinates: [ e.venue.geo_lng, e.venue.geo_lat ]
 		}
 		: null;
+
+	const tags = applyEventTags(source, e.title, e.description)
 	return {
 		title: e.title,
 		start: new Date(e.utc_start_date + 'Z'),
 		end: new Date(e.utc_end_date + 'Z'),
 		url: e.url,
+		tags,
 		extendedProps: {
 			description: e.description,
 			image: e.image.url,
