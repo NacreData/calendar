@@ -14,7 +14,8 @@
             ]
         ],
         "eventApiToGrab": [
-            "/api/events/googleCalendar"
+            "/api/events/googleCalendar",
+            "/api/events/wordpress-tribe"
         ]
     },
     "googleCalendar": [
