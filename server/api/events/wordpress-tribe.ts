@@ -28,7 +28,7 @@ async function fetchWordPressTribeEvents() {
 				wpEvents = wpEvents.concat(wpJson.events);
 			}
 			return {
-				events: wpEvents.map(convertWordpressTribeEventToFullCalendarEvent),
+				events: wpEvents.map(e => convertWordpressTribeEventToFullCalendarEvent(e, source)),
 				city: source.city,
 				name: source.name,
 			} as EventNormalSource;
@@ -61,7 +61,7 @@ function convertWordpressTribeEventToFullCalendarEvent(e, source) {
 		tags,
 		extendedProps: {
 			description: e.description,
-			image: e.image.url,
+			images: e.image?.url ? [e.image.url] : [],
 			location: {
 				geoJSON: geoJSON,
 				eventVenue: {
