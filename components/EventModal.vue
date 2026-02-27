@@ -19,6 +19,7 @@ const eventTitle = replaceBadgePlaceholders(rawEventTitle);
 const eventTime = props.event.event.start.toLocaleDateString() + ' @ ' + 
                   props.event.event.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 const eventHost = props.event.event.extendedProps.org;
+const eventOrganizer = props.event.event.extendedProps.organizer;
 const eventURL = props.event.event.url;
 const eventID = props.event.event.id;
 const rawLocation = props.event.event.extendedProps.location;
@@ -34,6 +35,10 @@ function formatLocation(loc) {
 const eventDescription = replaceBadgePlaceholders(sanitizeHtml(props.event.event.extendedProps.description));
 const eventImages = props.event.event.extendedProps.images || [];
 const eventTags = props.event.event.extendedProps.tags;
+const parsedExtendedProps = JSON.stringify(
+  Object.fromEntries(Object.entries(props.event.event.extendedProps).filter(([k]) => k !== 'raw')),
+  null, 2
+);
 
 //For interpreting the location into a google maps recognizable address
 function createGoogleMapsURL(location) {
@@ -63,55 +68,62 @@ const getImageClass = (index) => {
 
 <template>
   <VueFinalModal class="popper-box-wrapper" content-class="popper-box-inner" overlay-transition="vfm-fade" content-transition="vfm-fade">
+    <!-- Event Header -->
+    <div class="event-header">
+      <h1 v-html="eventTitle"></h1>
+      <div class="event-meta">
+        <span>{{ eventTime }}</span>
+        <span v-if="eventLocation"> · <a :href="createGoogleMapsURL(eventLocation)" target="_blank">{{ eventLocation }}</a></span>
+      </div>
+    </div>
+
+    <!-- Display Images -->
+    <div v-if="getImageUrls().length" class="image-container">
+      <div
+        class="image-wrapper"
+        v-for="(url, index) in getImageUrls()"
+        :key="index"
+      >
+        <div v-if="errorMessages[index]">
+          {{ errorMessages[index] }}
+        </div>
+        <img
+          class="event-image"
+          v-else
+          :src="url"
+          :class="getImageClass(index)"
+          @error="handleImageError(index)"
+          alt="Image found within the description of this calendar event"
+        />
+      </div>
+    </div>
+
     <!-- Display Event Details -->
     <div class="event-details">
-      <span class="event-headers">Event Title:</span> <span v-html="eventTitle"></span><br>
-      <span class="event-headers">Event Time:</span> {{ eventTime }}<br>
-      <span v-if="eventHost"> <span class="event-headers">Event Host:</span> {{ eventHost }}<br> </span>
-      <span v-if="eventLocation"> <span class="event-headers">Event Location:</span> <a :href="createGoogleMapsURL(eventLocation)" target="_blank">{{ eventLocation }}</a><br> </span>
-      <!-- Display Images -->
-      <div class="image-container">
-        <div 
-          class="image-wrapper"
-          v-for="(url, index) in getImageUrls()" 
-          :key="index"
-        >
-          <!-- Check if there's an error message for this image, if so, display the message instead of image -->
-          <div v-if="errorMessages[index]">
-            {{ errorMessages[index] }}
-          </div>   
-          <!-- If there's no error message, render the image as usual --> 
-          <img
-            class="event-image"
-            v-else
-            :src="url"
-            :class="getImageClass(index)"
-            @error="handleImageError(index)"
-            alt="Image found within the description of this calendar event"
-          />
-        </div>
+      <div v-if="eventHost" class="event-field">
+        <span class="event-headers">Event Host:</span> {{ eventHost }}
       </div>
-      <span class="event-headers">Event Description:</span> <div v-html="eventDescription"></div><br>
+      <div class="event-field">
+        <span class="event-headers">Description:</span>
+        <div v-if="eventDescription" v-html="eventDescription"></div>
+        <div v-else class="no-description"><em>No description provided</em></div>
+      </div>
+      <div v-if="eventOrganizer" class="event-field">
+        <span class="event-headers">Organizer:</span><br/>
+        <div v-html="eventOrganizer" />
+      </div>
     </div>
 
     <!-- Dev-only debug info -->
     <div v-if="isDevelopment" class="dev-info">
       <span class="dev-label">Dev Only</span>
-      <dl class="dev-fields">
-        <template v-if="eventID">
-          <dt>Event ID</dt>
-          <dd>{{ eventID }}</dd>
-        </template>
-        <dt>Event Images</dt>
-        <dd>{{ eventImages }}</dd>
-        <dt>Tags</dt>
-        <dd>{{ eventTags }}</dd>
-        <dt>Event URL</dt>
-        <dd><a :href="eventURL" target="_blank">{{ eventURL }}</a></dd>
-      </dl>
+      <details class="dev-raw">
+        <summary>Parsed JSON</summary>
+        <pre>{{ parsedExtendedProps }}</pre>
+      </details>
       <details class="dev-raw">
         <summary>Raw Event JSON</summary>
-        <pre>{{ JSON.stringify(props.event.event.extendedProps, null, 2) }}</pre>
+        <pre>{{ props.event.event.extendedProps.raw || JSON.stringify(props.event.event.extendedProps, null, 2) }}</pre>
       </details>
     </div>
 
@@ -125,6 +137,49 @@ const getImageClass = (index) => {
 </template>
 
 <style scoped>
+.event-header {
+  position: sticky;
+  top: -1rem;
+  background: var(--background-alt);
+  padding-top: 1rem;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 1;
+}
+
+.event-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.event-meta {
+  color: #666;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.image-container {
+  margin-bottom: 16px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.event-details {
+  margin-bottom: 8px;
+}
+
+.event-field {
+  margin-bottom: 8px;
+}
+
+.no-description {
+  color: #999;
+}
+
 .dev-info {
   margin-top: 12px;
   padding: 8px;
