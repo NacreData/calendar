@@ -101,7 +101,7 @@ function convertWordpressTribeEventToFullCalendarEvent(e, source) {
 		extendedProps: {
 			raw: JSON.stringify(e, null, 2),
 			description,
-			organizer,
+			org: organizer,
 			images: e.image?.url ? [ e.image.url ] : [],
 			location: venue
 				? {

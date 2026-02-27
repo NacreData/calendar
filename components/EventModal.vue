@@ -19,7 +19,6 @@ const eventTitle = replaceBadgePlaceholders(rawEventTitle);
 const eventTime = props.event.event.start.toLocaleDateString() + ' @ ' + 
                   props.event.event.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 const eventHost = props.event.event.extendedProps.org;
-const eventOrganizer = props.event.event.extendedProps.organizer;
 const eventURL = props.event.event.url;
 const eventID = props.event.event.id;
 const rawLocation = props.event.event.extendedProps.location;
@@ -107,10 +106,6 @@ const getImageClass = (index) => {
         <span class="event-headers">Description:</span>
         <div v-if="eventDescription" v-html="eventDescription"></div>
         <div v-else class="no-description"><em>No description provided</em></div>
-      </div>
-      <div v-if="eventOrganizer" class="event-field">
-        <span class="event-headers">Organizer:</span><br/>
-        <div v-html="eventOrganizer" />
       </div>
     </div>
 
