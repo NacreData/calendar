@@ -59,10 +59,6 @@ const getImageClass = (index) => {
       <span class="event-headers">Event Title:</span> <span v-html="eventTitle"></span><br>
       <span class="event-headers">Event Time:</span> {{ eventTime }}<br>
       <span v-if="eventHost"> <span class="event-headers">Event Host:</span> {{ eventHost }}<br> </span>
-      <span v-if="isDevelopment && eventID"> <span class="event-headers">Event ID: </span> {{ eventID }}<br> </span>
-      <span v-if="isDevelopment"> <span class="event-headers">Event Images: </span> {{ eventImages }}<br> </span>
-      <span v-if="isDevelopment && eventTags && eventTags.length"> <span class="event-headers">Tags:</span> <span class="event-tag" v-for="tag in eventTags" :key="tag">{{ tag }}</span><br> </span>
-      <span v-if="isDevelopment"> <span class="event-headers">Event URL:</span> <a :href="eventURL" target="_blank">Here</a><br> </span>
       <span class="event-headers">Event Location:</span> <a :href="createGoogleMapsURL(eventLocation)" target="_blank">{{ eventLocation }}</a><br>
       <!-- Display Images -->
       <div class="image-container">
@@ -89,6 +85,27 @@ const getImageClass = (index) => {
       <span class="event-headers">Event Description:</span> <div v-html="eventDescription"></div><br>
     </div>
 
+    <!-- Dev-only debug info -->
+    <div v-if="isDevelopment" class="dev-info">
+      <span class="dev-label">Dev Only</span>
+      <dl class="dev-fields">
+        <template v-if="eventID">
+          <dt>Event ID</dt>
+          <dd>{{ eventID }}</dd>
+        </template>
+        <dt>Event Images</dt>
+        <dd>{{ eventImages }}</dd>
+        <dt>Tags</dt>
+        <dd>{{ eventTags }}</dd>
+        <dt>Event URL</dt>
+        <dd><a :href="eventURL" target="_blank">{{ eventURL }}</a></dd>
+      </dl>
+      <details class="dev-raw">
+        <summary>Raw Event JSON</summary>
+        <pre>{{ JSON.stringify(props.event.event.extendedProps, null, 2) }}</pre>
+      </details>
+    </div>
+
     <!-- Add a "Done" button -->
     <div class="bottom">
       <button @click="emit('confirm')">
@@ -99,13 +116,55 @@ const getImageClass = (index) => {
 </template>
 
 <style scoped>
-.event-tag {
+.dev-info {
+  margin-top: 12px;
+  padding: 8px;
+  border: 1px dashed #999;
+  border-radius: 4px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.dev-label {
   display: inline-block;
-  background-color: #e0e0e0;
-  color: #333;
-  padding: 2px 8px;
-  margin: 2px 4px;
-  border-radius: 12px;
+  background-color: #f0ad4e;
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.dev-fields {
+  margin: 4px 0 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+}
+
+.dev-fields dt {
+  font-weight: bold;
+}
+
+.dev-fields dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.dev-raw {
+  margin-top: 8px;
+}
+
+.dev-raw pre {
+  margin: 4px 0 0;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
   font-size: 0.85em;
+  max-height: 300px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 </style>
