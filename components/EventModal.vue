@@ -21,7 +21,16 @@ const eventTime = props.event.event.start.toLocaleDateString() + ' @ ' +
 const eventHost = props.event.event.extendedProps.org;
 const eventURL = props.event.event.url;
 const eventID = props.event.event.id;
-const eventLocation = props.event.event.extendedProps.location;
+const rawLocation = props.event.event.extendedProps.location;
+const eventLocation = formatLocation(rawLocation);
+
+function formatLocation(loc) {
+  if (!loc) return '';
+  if (typeof loc === 'string') return loc;
+  const venue = loc.eventVenue;
+  if (!venue) return '';
+  return [venue.name, venue.address?.streetAddress, venue.address?.addressLocality].filter(Boolean).join(', ');
+}
 const eventDescription = replaceBadgePlaceholders(sanitizeHtml(props.event.event.extendedProps.description));
 const eventImages = props.event.event.extendedProps.images || [];
 const eventTags = props.event.event.extendedProps.tags;
@@ -59,7 +68,7 @@ const getImageClass = (index) => {
       <span class="event-headers">Event Title:</span> <span v-html="eventTitle"></span><br>
       <span class="event-headers">Event Time:</span> {{ eventTime }}<br>
       <span v-if="eventHost"> <span class="event-headers">Event Host:</span> {{ eventHost }}<br> </span>
-      <span class="event-headers">Event Location:</span> <a :href="createGoogleMapsURL(eventLocation)" target="_blank">{{ eventLocation }}</a><br>
+      <span v-if="eventLocation"> <span class="event-headers">Event Location:</span> <a :href="createGoogleMapsURL(eventLocation)" target="_blank">{{ eventLocation }}</a><br> </span>
       <!-- Display Images -->
       <div class="image-container">
         <div 
