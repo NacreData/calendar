@@ -61,7 +61,7 @@ const getImageClass = (index) => {
       <span v-if="eventHost"> <span class="event-headers">Event Host:</span> {{ eventHost }}<br> </span>
       <span v-if="isDevelopment && eventID"> <span class="event-headers">Event ID: </span> {{ eventID }}<br> </span>
       <span v-if="isDevelopment"> <span class="event-headers">Event Images: </span> {{ eventImages }}<br> </span>
-      <span v-if="isDevelopment"> <span class="event-headers">Event Tags: </span> {{ eventTags }}<br> </span>
+      <span v-if="isDevelopment && eventTags && eventTags.length"> <span class="event-headers">Tags:</span> <span class="event-tag" v-for="tag in eventTags" :key="tag">{{ tag }}</span><br> </span>
       <span v-if="isDevelopment"> <span class="event-headers">Event URL:</span> <a :href="eventURL" target="_blank">Here</a><br> </span>
       <span class="event-headers">Event Location:</span> <a :href="createGoogleMapsURL(eventLocation)" target="_blank">{{ eventLocation }}</a><br>
       <!-- Display Images -->
@@ -97,3 +97,15 @@ const getImageClass = (index) => {
     </div>
   </VueFinalModal>
 </template>
+
+<style scoped>
+.event-tag {
+  display: inline-block;
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 2px 8px;
+  margin: 2px 4px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+</style>
