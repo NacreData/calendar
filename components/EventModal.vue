@@ -58,8 +58,8 @@ const getImageClass = (index) => {
     <div class="event-details">
       <span class="event-headers">Event Title:</span> <span v-html="eventTitle"></span><br>
       <span class="event-headers">Event Time:</span> {{ eventTime }}<br>
-      <span class="event-headers">Event Host:</span> {{ eventHost }}<br>
-      <span v-if="isDevelopment"> <span class="event-headers">Event ID: </span> {{ eventID }}<br> </span>
+      <span v-if="eventHost"> <span class="event-headers">Event Host:</span> {{ eventHost }}<br> </span>
+      <span v-if="isDevelopment && eventID"> <span class="event-headers">Event ID: </span> {{ eventID }}<br> </span>
       <span v-if="isDevelopment"> <span class="event-headers">Event Images: </span> {{ eventImages }}<br> </span>
       <span v-if="isDevelopment"> <span class="event-headers">Event Tags: </span> {{ eventTags }}<br> </span>
       <span v-if="isDevelopment"> <span class="event-headers">Event URL:</span> <a :href="eventURL" target="_blank">Here</a><br> </span>
