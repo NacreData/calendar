@@ -127,6 +127,7 @@
         "name" : "The Burrow",
         "url" : "https://durhamburrow.xyz/wp-json/tribe/events/v1/events?per_page=50&categories=9",
         "city" : "Durham, NC",
+        "defaultLocation": "The Burrow, 207 N. Church St., Durham",
         "filters": [
             { "tags": ["durham"] }
         ]
